@@ -1,4 +1,5 @@
 module.exports = {
+    base:'https://snowtreetree.github.io/blog',
     themeConfig: {
     // 顶部导航
       nav: [
