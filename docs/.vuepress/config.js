@@ -1,5 +1,5 @@
 module.exports = {
-    base:'/',
+    base:'/blog/',
     themeConfig: {
     // 顶部导航
       nav: [
