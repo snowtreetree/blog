@@ -1,4 +1,5 @@
 module.exports = {
+    base:'/',
     themeConfig: {
     // 顶部导航
       nav: [
