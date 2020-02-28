@@ -1,5 +1,4 @@
 module.exports = {
-    base:'/blog/',
     themeConfig: {
     // 顶部导航
       nav: [
@@ -13,15 +12,17 @@ module.exports = {
           {
             title:'常用',
             path:'/',
-            children:[
-                '/EventLoop'
-            ]
+            // children:[
+            //     '/EventLoop'
+            // ]
         },
         {
             title:'JavaScript',
-            path:'/',
+            path:'/js',
+            
             children:[
-                '/scroll'
+                '/scroll',
+                '/EventLoop'
             ]
         },
         {
@@ -31,7 +32,6 @@ module.exports = {
               '/other/select'
           ]
       },
-          '/EventLoop',
       ]
     }
   }
