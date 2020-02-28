@@ -12,5 +12,5 @@ features:
   details: 总结学习的知识，好记性不如烂笔头。
 - title: 
   details: 
-footer: MIT Licensed | Copyright © 2020-present zxl
+footer: MIT Licensed | Copyright © 2020-present xuelin zhang
 ---
