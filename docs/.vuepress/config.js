@@ -1,4 +1,5 @@
 module.exports = {
+  base:'/zxl/',
   themeConfig: {
     repo: "snowtreetree/blog",
     // 顶部导航
