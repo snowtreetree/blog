@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: ./hero.png
+heroImage: /hero.png
 heroText: 个人blog
 tagline: 个人学习总结
 actionText: 开始阅读 →
