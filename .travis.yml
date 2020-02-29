@@ -6,6 +6,7 @@ install:
 script:
   - yarn build # npm run docs:build
 deploy:
+  repo: snowtreetree/snowtreetree.github.io
   provider: pages
   skip_cleanup: true
   local_dir: docs/.vuepress/dist
