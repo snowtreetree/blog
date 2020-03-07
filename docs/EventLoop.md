@@ -6,7 +6,10 @@
 
 ## 是什么
 
-:::tip 事件循环。JavaScript是单线程的，前面耗时比较长的任务，会阻塞后面代码的执行，但对于IO（接口请求），后面的任务没必要等着响应回来之后才执行。对于那些一步一步执行，上一步执行完才执行下一步的，成为同步任务。不进入主线程，而进入任务队列（task quene）的任务，称为异步任务。EventLoop就是避免JavaScript在执行过程中出现阻塞的机制。  
+事件循环。JavaScript是单线程的，意味着任务需要排队执行。如果前面耗时比较长的任务，会阻塞后面代码的执行，但对于IO（接口请求），后面的任务没必要等着响应回来之后才执行。对于那些一步一步执行，上一步执行完才执行下一步的，称为同步任务。不进入主线程，而进入任务队列（task quene）的任务，称为异步任务。EventLoop就是避免JavaScript在执行过程中出现阻塞的机制。  
+
+::: tip
+JavaScript单线程原因，常见解释为，若有两个线程（A，B）同一时间在操作同一个DOM（D）元素，A线程在往D元素上添加内容（文本、属性或其他内容），但是B线程在删除D元素。
 :::
 
 ## 相关内容
@@ -61,7 +64,18 @@ console.log('script end')
 
 执行结果`script start，promise，script end，resolve，settimeout`
 
-## 过程（待更新）
+## 过程
+
+### 大致过程
+
+1、同步任务在主线程上执行，形成执行栈
+2、主线程外还有一个任务队列，异步任务执行完成之后，就在任务队列放置一个时间
+3、执行栈上的任务执行完毕，系统读取任务队列
+4、任务队列执行完毕，重新检查主线程上的任务（循环往复）
+
+::: tip
+对于AJAx、setTimeout这些，浏览器提供的webapi，在执行完成之后会放到callbackquene，等待系统读取
+:::
 
 
 ## 参考
@@ -74,3 +88,7 @@ console.log('script end')
 [微任务、宏任务与Event-Loop](https://juejin.im/post/5b73d7a6518825610072b42b)
 
 [一次弄懂Event Loop](https://juejin.im/post/5c3d8956e51d4511dc72c200)
+
+[到底什么是Event Loop呢](https://www.youtube.com/watch?v=8aGhZQkoFbQ&feature=youtu.be)
+
+[直观查看执行栈和执行队列](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)
