@@ -4,7 +4,7 @@ module.exports = {
   themeConfig: {
     repo: "snowtreetree/blog",
     // 顶部导航
-    nav: [{ text: "Home", ariaLabel: "Language Menu", link: "/" }],
+    nav: [{ text: "Home", ariaLabel: "Language Menu", link: "/" },{ text: "基础", ariaLabel: "Language Menu", link: "/base/" }],
     sidebar: {
       "/blog/": [
         {
@@ -12,7 +12,14 @@ module.exports = {
           collapsable: false,
           children: ["scroll", "select", "EventLoop"]
         }
-      ]
+      ],
+      "/base/": [
+        {
+          title:"基础",
+          collapsable: false,
+          children:['',"bind"]
+        }
+      ],
     }
   }
 };
