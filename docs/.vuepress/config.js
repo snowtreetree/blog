@@ -10,7 +10,12 @@ module.exports = {
         {
           title: "JavaScript",
           collapsable: false,
-          children: ["scroll", "select", "EventLoop"]
+          children: ["js/scroll", "js/select", "js/EventLoop"]
+        },
+        {
+          title: "CSS",
+          collapsable: false,
+          children: ["css/greyFilter"]
         }
       ],
       "/base/": [
