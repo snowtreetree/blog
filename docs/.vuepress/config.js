@@ -16,6 +16,11 @@ module.exports = {
           title: "CSS",
           collapsable: false,
           children: ["css/greyFilter"]
+        },
+        {
+          title: "HTTP",
+          collapsable: false,
+          children: ["http/InterconnectionModel"]
         }
       ],
       "/base/": [
