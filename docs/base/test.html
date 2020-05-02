@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function MyPromise(executor){
+    var self = this
+    self.status = 'pending'; // 当前执行状态
+    self.data = undefined;
+    // 操作成功，执行executor的resolve(第一个函数参数)，并传入结果
+    // 操作失败，执行executor的reject(第二个函数参数)，并传入结果
+    self.onResolvedCallback = [] // resolve函数集，Promise结束之前可能有多个回调添加到上面
+    self.onRejectedCallback = [] // reject 函数集，Promise结束之前可能有多个回调添加到上面
+
+    function resolve(value){
+        if(self.status === 'pending'){
+            self.status = 'resolved';
+            self.data = value
+            for(var i = 0; i < self.onResolvedCallback.length ; i++){
+                self.onResolvedCallback[i](value)
+            }
+            self.onResolvedCallback = []
+        }
+    }
+
+    function reject(reason){
+         if(self.status === 'pending'){
+            self.status = 'rejected'
+            self.data = reason;
+            for(var i = 0; i < self.onRejectedCallback.length ; i++){
+                self.onRejectedCallback[i](reason)
+            }
+            self.onRejectedCallback = []
+        }
+    }
+
+    // resolve,reject 为两个函数，只会执行一个
+    // executor 可能会报错，报错时，直接执行reject
+    try{
+        executor(resolve,reject)
+    }catch(e){
+        reject(e)
+    }
+}
+
+// then 方法
+MyPromise.prototype.then = function then(onResolved,onRejected){
+    var self = this;
+    var promise2;
+    onResolved = typeof onResolved === 'function'?onResolved:function(v){};
+    onRejected = typeof onRejected === 'function'?onRejected:function(r){};
+    if(self.status === 'resolved'){
+        return promise2 = new MyPromise(function(resolve,reject){
+            try{
+                var x = onResolved(self.data);
+                // 结果已经是promise的话，直接将x的执行结果作为返回
+                if(x instanceof MyPromise){
+                    x.then(resolve,reject)
+                }
+            }catch(e){
+                reject(e)
+            }
+        })
+    }
+    if(self.status === 'rejected'){
+        return promise2 = new MyPromise(function(resolve,reject){
+             try{
+                var x = onRejected(self.data);
+                if(x instanceof MyPromise){
+                    x.then(resolve,reject)
+                }
+            }catch(e){
+                reject(e)
+            }
+        })
+    }
+    if(self.status === 'pending'){
+        // 为pending时，直接加入到onResolvedCallback，onRejectedCallback中去，待执行结束后调用
+        return promise2 = new MyPromise(function(resolve,reject){
+           self.onResolvedCallback.push(function(value){
+               var x = onResolved(value)
+               if(x instanceof MyPromise){
+                   x.then(resolve,reject)
+               }
+               resolve(x)
+           })
+           self.onRejectedCallback.push(function(value){
+               var x = onRejected(value)
+               if(x instanceof MyPromise){
+                   x.then(resolve,reject)
+               }
+               reject(x)
+           })
+        })
+    }
+}
+
+MyPromise.prototype.catch = function catchs(onRejected){
+    return this.then(null,onRejected)
+}
+
+MyPromise.resolve = function resolve(value){
+    return new MyPromise(function(resolve,reject){
+        resolve(value)
+    })
+}
+
+
+var promise = new MyPromise((resolve,reject)=>{
+    resolve(888)
+})
+
+var promise2 = MyPromise.resolve(222)
+promise.then(res => {
+    alert(a2222)
+    console.log(44,res)
+}).catch(res => {
+    console.log(res,8888)
+})
+
+promise2.then(res => {
+    console.log('promise2',res)
+})
+        </script>
+</body>
+</html>

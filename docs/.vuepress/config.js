@@ -10,7 +10,7 @@ module.exports = {
         {
           title: "JavaScript",
           collapsable: false,
-          children: ["js/scroll", "js/select", "js/EventLoop"]
+          children: ["js/scroll", "js/select", "js/EventLoop", "js/debounceandthrottle"]
         },
         {
           title: "CSS",
@@ -20,8 +20,13 @@ module.exports = {
         {
           title: "HTTP",
           collapsable: false,
-          children: ["http/InterconnectionModel"]
-        }
+          children: ["http/InterconnectionModel","http/http2"]
+        },
+        {
+          title: "HTML",
+          collapsable: false,
+          children: ["html/RepaintandReflow"]
+        },
       ],
       "/base/": [
         {
