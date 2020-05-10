@@ -10,7 +10,7 @@ module.exports = {
         {
           title: "JavaScript",
           collapsable: false,
-          children: ["js/scroll", "js/select", "js/EventLoop", "js/debounceandthrottle", "js/module"]
+          children: ["js/scroll", "js/select", "js/EventLoop", "js/debounceandthrottle", "js/module","js/promise"]
         },
         {
           title: "CSS",
