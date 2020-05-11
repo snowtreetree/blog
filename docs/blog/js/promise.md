@@ -84,3 +84,14 @@ pro_one().then(res => {
 ## all
 
 参数为数组，数组内为Promise任务，全部执行完成后，返回执行结果，如果有一个失败，则会执行onRejected函数。只会将第一个返回的结果作为参数。
+
+## 串行
+
+每次执行一个Promise任务，一个任务执行结束之后，再去执行下一个Promise任务
+
+``` js
+const a = (a) => new Promise(r => {setTimeout(() => {console.log('a:',a);r(a)},1000)})
+const arr = [1,2,3]
+arr.reduce((prePromise,id) => prePromise.then((preId) => new Promise(r => setTimeout(() => {console.log(preId,id);r(id)},1000))),Promise.resolve(0))
+arr.reduce((prePromise,id) => prePromise.then((preId) => a(id)),Promise.resolve(0))
+```
