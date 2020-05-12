@@ -10,7 +10,7 @@ module.exports = {
         {
           title: "JavaScript",
           collapsable: false,
-          children: ["js/scroll", "js/select", "js/EventLoop", "js/debounceandthrottle", "js/module","js/promise"]
+          children: ["js/scroll", "js/select", "js/EventLoop", "js/debounceandthrottle", "js/module","js/promise","js/sort"]
         },
         {
           title: "CSS",
@@ -32,7 +32,7 @@ module.exports = {
         {
           title:"基础",
           collapsable: false,
-          children:['',"bind","promise"]
+          children:['',"bind","promise",'recursive']
         }
       ],
     }
