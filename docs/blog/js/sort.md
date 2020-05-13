@@ -16,7 +16,7 @@ for(let i = 0; i < len-1; i++){
 
 ## 选择排序
 
-在未排序的元素中，找到最大/最小值，放到未排序元素的其实位置。
+在未排序的元素中，找到最大/最小值，放到未排序元素的起始位置。
 
 ```js
 const arr = [4,5,1,2,6,3]
@@ -61,7 +61,7 @@ function quickSort(arr){
     const len = arr.length
     if(len <= 1) return arr;
     const pivotIndex = Math.floor(len/2)
-    const pivot = arr[pivotIndex];
+    const pivot = arr.splice(pivotIndex,1)[0];
     const left = []
     const right = []
     for(let i = 0; i < len; i++){
