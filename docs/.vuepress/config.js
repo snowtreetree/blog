@@ -20,7 +20,7 @@ module.exports = {
         {
           title: "HTTP",
           collapsable: false,
-          children: ["http/InterconnectionModel","http/http2",'http/SSL&TLS']
+          children: ["http/InterconnectionModel","http/http2",'http/SSL&TLS','http/cache','http/localCache']
         },
         {
           title: "HTML",
