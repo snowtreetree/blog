@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <div class="box-left"></div>
+        <div class="box-right"></div>
+    </div>
+    <style>
+        .box div{
+            height: 100px;
+        }
+        .box-left{
+            float: left;
+            width: 200px;
+            background-color: aquamarine;
+        }
+        .box-right {
+            background-color: yellowgreen;
+        }
+        .box-right {
+            width: calc(100%-200px);
+            /* float: right; */
+        }
+    </style>
+</body>
+</html>
