@@ -27,6 +27,11 @@ module.exports = {
           collapsable: false,
           children: ["html/RepaintandReflow"]
         },
+        {
+          title: "NGINX",
+          collapsable: false,
+          children: ["nginx/base"]
+        },
       ],
       "/base/": [
         {
