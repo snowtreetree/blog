@@ -34,9 +34,12 @@ http
     { 
         // 监听端口，SSL为443
         listen 443 ssl;
+        // 日志
+        access_log /home/logs/nginx/buzhifangxue.access.log;
+        error_log /home/logs/nginx/buzhifangxue.error.log;
         // 域名信息
-        server_name buzhifangxue.com
-        root html
+        server_name buzhifangxue.com;
+        root html;
         // 配置请求路由
         location / {
             // 配置HTML文件
@@ -58,8 +61,23 @@ http
 
     server
     {
+        // 类似于上述配置
         ...
     }
-
+    // 配置目录
+    include /etc/nginx/sites-available/*;
 }
+```
+
+## 常用命令
+
+```json
+// 检查配置
+nginx -t 
+
+// 重启
+nginx -s reload
+
+// 关闭
+nginx -s stop
 ```
