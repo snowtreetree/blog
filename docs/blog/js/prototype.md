@@ -1,9 +1,9 @@
 # 原型&原型链
-
+<img :src="$withBase('/prototype.jpg')" alt="foo">
 ::: tip  
-- 构造函数、原型、实例
+- 构造函数、原型、实例  
 每个构造函数（constructor）都有一个原型对象（prototype），这个原型对象，又都包含了一个指向该构造函数的指针，通过构造函数创建出来的实例（instance）都包含了一个指针指向原型对象（prototype）。  
-- 原型链
+- 原型链  
 当访问实例对象的属性时，会现在对象内部查找，找不到，会在这个对象的原型（instance.prototype）里去找这个属性。循环如此。
 
 ```js
@@ -49,3 +49,27 @@ console.log(instance2.color)
 
 ## Object.create
 创建一个新对象，并将新对象的__proto__指向现有的对象
+
+## 对象创建方法
+```js
+// 1、普通创建
+var obj1 = {name:'xuelinz'}
+
+// 2、构造函数
+function A(name){
+    this.name = name
+}
+var obj2 = new A('xuelinz')
+
+// Class（ES6）
+
+class B {
+    constructor(name){
+        // super()  使用extends时
+        this.name = name
+    }
+}
+
+var obj3 = new B('xuelinz')
+
+```
