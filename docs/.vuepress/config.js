@@ -4,7 +4,11 @@ module.exports = {
   themeConfig: {
     repo: "snowtreetree/blog",
     // 顶部导航
-    nav: [{ text: "Home", ariaLabel: "Language Menu", link: "/" },{ text: "基础", ariaLabel: "Language Menu", link: "/base/" }],
+    nav: [
+      { text: "Home", ariaLabel: "Home", link: "/" },
+      { text: "基础", ariaLabel: "Base", link: "/base/" },
+      { text: "面试", ariaLabel: "Interview", link: "/interview/" }
+    ],
     sidebar: {
       "/blog/": [
         {
@@ -40,6 +44,13 @@ module.exports = {
           children:['',"bind","promise",'recursive']
         }
       ],
-    }
+      "/interview/":[
+        {
+          title: "面试",
+          collapsable: false,
+          children: ['',"repeatId"]
+        },
+      ]
+    },
   }
 };
