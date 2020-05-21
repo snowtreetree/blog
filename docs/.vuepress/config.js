@@ -48,7 +48,7 @@ module.exports = {
         {
           title: "面试",
           collapsable: false,
-          children: ["HTML","array"]
+          children: ["HTML","array","date"]
         },
       ]
     },
