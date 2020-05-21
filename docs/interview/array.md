@@ -43,8 +43,3 @@ var flat5 = arr.join().split('')
 ```
 
 ## 区分是对象还是数组
-
-
-# Date 
-# Window
-# promise

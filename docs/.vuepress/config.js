@@ -41,7 +41,7 @@ module.exports = {
         {
           title:"基础",
           collapsable: false,
-          children:['',"bind","promise",'recursive']
+          children:['',"bind","promise"]
         }
       ],
       "/interview/":[
