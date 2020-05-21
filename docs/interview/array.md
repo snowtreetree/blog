@@ -43,3 +43,15 @@ var flat5 = arr.join().split('')
 ```
 
 ## 区分是对象还是数组
+
+```js
+var arr = []
+// instanceof 基于原型链
+arr instanceof Array
+// toString
+Object.prototype.toString.call(arr) === "[object Array]"
+// Array.isArray(arr)
+ Array.isArray(arr)
+// isPrototypeOf
+ Array.prototype.isPrototypeOf(arr)
+```
