@@ -36,6 +36,11 @@ module.exports = {
           collapsable: false,
           children: ["nginx/base"]
         },
+        {
+          title: "webpack",
+          collapsable: false,
+          children: ["webpack/loader&plugin","webpack/proxyTable",]
+        },
       ],
       "/base/": [
         {
