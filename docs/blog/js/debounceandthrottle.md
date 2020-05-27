@@ -17,13 +17,13 @@ var debounce = function (fn,time=2000,immediate){
 
         if(immediate) {
             // 立即执行
-            if(!timeout) result = fn.apply(fn,args);
+            if(!timeout) result = fn.apply(context,args);
                 timeout = setTimeout(()=>{
                     timeout = null
                 },time)
             }else{
              timeout = setTimeout(() => {
-                fn.apply(fn,args)
+                fn.apply(context,args)
             },time)
             return result
         }
