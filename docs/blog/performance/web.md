@@ -9,6 +9,7 @@
 - 脚本动态加载，比如地图SDK文件，动态创建script标签去获取。
 - [异步加载async/defer]('../js/script.md')，[预加载]('../CSS3/link.md')
 - 图片懒加载
+- [避免使用@import](https://juejin.im/post/5b6133a351882519d346853f#heading-10)。使用@import引入CSS，会影响浏览器并行下载，只有在引用的文件下载完成后，才会去下载另外的CSS文件。
 
 ## 减少静态资源的体积
 
