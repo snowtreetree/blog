@@ -47,6 +47,11 @@ module.exports = {
           title:"基础",
           collapsable: false,
           children:['',"bind","promise"]
+        },
+        {
+          title:'正则',
+          collapsable: false,
+          children: ["RegExp/base",]
         }
       ],
       "/interview/":[
