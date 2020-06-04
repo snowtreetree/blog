@@ -1,5 +1,16 @@
 # 正则表达式
 
+Regular Expression，简写Regex、Regexp。
+
+## 写法
+
+```js
+var regex1 = /\d/i
+var regex2 = new Regex(/\d/i)
+var regex3 = new Regex('xyz','i')
+var regex3 = new Regex(/\d/,'i')
+```
+
 ### [在线测试](https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24)
 
 ## 常用方法
@@ -36,6 +47,16 @@ var result1 = str.match(/hello/)
 // results ["hello",index:0...]
 var result2 = str.match(/hello/g)
 // result2 ["hello","hello"]
+```
+
+### String.prototype.search()
+
+返回第一个匹配字符/内容的位置，找不到返回-1。不会全局匹配
+
+```js
+var str = 'hello hello'
+var result1 = str.search(/hello/)
+// result1 0
 ```
 
 ## 表达式中的符号
