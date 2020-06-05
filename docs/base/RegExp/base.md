@@ -41,6 +41,17 @@ stringObject.match(regexp)，返回匹配结果（数组形式），不是字符
 
 match的参数为RegExp对象，如果不是则会通过RegExp进行转换。
 
+### String.prototype.replace(regexp|substr, newSubStr|function)
+
+- regexp 正则表达式
+- substr 字符串
+- newSubStr 新字符串
+- function 函数参数(match,p1,p2...,offset,string)
+    - match 匹配的字符串
+    - p1,p2... regexp表达式中第n个小括号的值
+    -  offset 偏移量
+    - 原字符串
+
 ```js
 var str = 'hello hello'
 var result1 = str.match(/hello/)
@@ -166,6 +177,10 @@ var result = "[JS] less is more.jpg".replace(/\b/g,'#')
 // result "[#JS#] #less# #is# #more#.#jpg#"
 ```
 
+- `\w` 匹配数字、字母、下划线。等价于[0-9a-zA-Z_]
+- `\W` 匹配非数字、字母、下划线。等价于[^0-9a-zA-Z_]
+
+
 - `\B` 匹配非单词边界。
 - `.` 匹配除了换行、回车、行分隔符、段分隔符之外的字符。
 
@@ -182,10 +197,7 @@ var result4 = /nihao\B/.test('nihao2')
 - `\s` 匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]
 - `\S` 匹配任何非空白字符，包括空格、制表符、换页符等等。等价于 [^ \f\n\r\t\v]
 
-- `\w` 匹配数字、字母、下划线。等价于[0-9a-zA-Z_]
-- `\W` 匹配非数字、字母、下划线。等价于[^0-9a-zA-Z_]
-
-- `\num` num 为数字，对所获取的匹配的引用。例如，'(.)\1' 匹配两个连续的相同字符。
+- `\number` num 为数字，对所获取的匹配的引用。例如，'(.)\1' 匹配两个连续的相同字符。[反向引用]('./#反向引用')。
 
 - `(?=p)` 子等式，p前面的位置，p是个子模式。
 - `(?!p)` 子等式取反。
@@ -195,7 +207,6 @@ var result1 = '123456'.replace(/(?=6)/g,'#')
 var result2 = '123456'.replace(/(?!6)/g,'#')
 // result1 "12345#6"， result2 "#1#2#3#4#56#"
 ```
-
 
 ## 相关概念
 
@@ -234,6 +245,23 @@ var regex = /\d{2,5}/g
 *?
 ```
 
+
+### 反向引用
+
+调用已经匹配到的值。
+
+- `\1`，指向$1，即第1个()中匹配到的值
+- `\2`，指向$2，即第2个()中匹配到的值
+- ...
+
+```js
+var str1 = 'aaa000bbb111'
+var reg1 = /(\d)\1\1/g
+var result1 = str1.match(reg1)
+// result1 ['000','111']
+
+```
+
 ## 其他
 
 ### 匹配任意字符
@@ -257,3 +285,45 @@ var result = '123222456'.replace(/(?!^)(?=(\d{3})+$)/g,'$1,')
 // \d{3} 匹配连续的三位数字
 // + 至少匹配一次
 ```
+
+### 日期间隔符替换
+
+```js
+var date = (new Date()).toLocaleDateString()
+// 2020/6/5
+date.replace(/(\d{4})\/(\d{1,2})\/(\d{1,2})/,'$1,$2,$3')
+// date.split('/').join(',')
+```
+
+### 首尾空格替换（trim）
+
+```js
+var reg = /^\s|\s+$/g
+var str = 'hello world '
+var result = str.replace(reg,'')
+```
+
+### 首字母大写
+
+```js
+var reg = /(?:^|\s)\w/g
+var str = 'hello world'
+var result = str.replace(reg,function(match,c){
+    // match 匹配元素
+    return match.toUpperCase()
+})
+// result 'Hello World'
+```
+
+### 驼峰
+
+```js
+var reg = /[-_\s]+(.)?/g
+var str = 'hello-world'
+var result = str.replace(reg,function(match,c){
+    console.log(match,c)
+    // match 匹配的字符串，c 第1个小括号匹配的字符串
+    return c?c.toUpperCase():''
+})
+```
+
