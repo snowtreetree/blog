@@ -27,6 +27,11 @@ module.exports = {
           children: ["http/InterconnectionModel","http/http2",'http/SSL&TLS','http/cache','http/localCache','http/attack']
         },
         {
+          title: "HTTP深入学习",
+          collapsable: false,
+          children: ["http/protocol","http/layer"]
+        },
+        {
           title: "HTML",
           collapsable: false,
           children: ["html/RepaintandReflow"]
