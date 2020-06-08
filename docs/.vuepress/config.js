@@ -29,7 +29,7 @@ module.exports = {
         {
           title: "HTTP深入学习",
           collapsable: false,
-          children: ["http/protocol","http/layer","http/DomainName","http/RequestResponse","http/methods"]
+          children: ["http/protocol","http/layer","http/DomainName","http/RequestResponse","http/methods","http/status"]
         },
         {
           title: "HTML",
