@@ -32,7 +32,14 @@
 
 ### OPTIONS
 
-列出可对资源实现的方法，fetch中的跨域会遇到。
+列出可对资源实现的方法。在跨域的情况下，浏览器发起复杂请求的时候，会先发使用OPTIONS发起一个预检查请求（prelight request）,从而判定服务器是否支持跨域。待确认好之后，才能够发起对应的复杂请求。
+
+#### 简单请求（并不适用于Fetch）
+
+- 使用GET、POST、HEAD
+- 人为设置Accept、Accept-Language、Content-Language、Content-Type等
+- Content-Type 的值仅限于下列三者之一，text/plain，multipart/form-data，application/x-www-form-urlencoded
+...
 
 ### TRACE
 
