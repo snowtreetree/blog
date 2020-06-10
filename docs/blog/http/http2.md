@@ -3,7 +3,7 @@
 ::: tip
 HTTP2采用二进制格式传输，解析更高效，HTTP1.x采用文本格式。  
 基于Google的SPDY 协议，注重性能改善。  
-HTTP3基于Google的QUIC协议。
+HTTP3基于Google的QUIC（Quick UDP Internet Connection）协议，基于UDP [HTTP3](https://www.zhihu.com/question/302412059)。
 :::
 
 ## HTTP2改进内容
