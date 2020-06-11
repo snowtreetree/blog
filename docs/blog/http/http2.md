@@ -21,7 +21,7 @@ HTTP3基于Google的QUIC（Quick UDP Internet Connection）协议，基于UDP [H
 在应用层（HTTP2）和传输层（UDP或TCP）只不过之间增加一个二进制分帧层。  
 二进制分帧层会将传输的信息分割为更小的消息和帧，并进行二进制编码。
 
-### 首部压缩
+### 首部压缩/头部压缩
 
 减少数据传输
 
