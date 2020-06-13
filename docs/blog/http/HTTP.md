@@ -103,6 +103,22 @@ URL 则是用来定位具体的资源的，标示了一个具体的资源位置�
     - Last-Modified:
 - 响应正文
 
+::: tip
+
+```js
+
+Set-Cookie: a=b;Max-Age=10;Expires=xxx;Domain=xxx;path=/;HttpOnly;SameSite=Strict
+```
+
+Expires（绝对时间点），Max-Age（单位是秒）用来设置cookie的过期时间，Max-Age优先级更高。
+
+`Domain`和`Path`指定了 Cookie 所属的域名和路径
+
+`HttpOnly` 设置了不同通过document.cookie操作cookie信息。
+
+`SameSite`可以防范`跨站请求伪造`（XSRF）攻击，设置成`SameSite=Strict`可以严格限定 Cookie 不能随着跳转链接跨站发送，而`SameSite=Lax`则略宽松一点，允许 GET/HEAD 等安全方法，但禁止 POST 跨站发送
+
+:::
 ### 状态码
 
 #### 1xx，请求已收到，需进一步处理
