@@ -14,22 +14,50 @@ module.exports = {
         {
           title: "JavaScript",
           collapsable: false,
-          children: ["js/script","js/scroll", "js/select", "js/EventLoop", "js/debounceandthrottle", "js/module","js/promise","js/sort","js/calc","js/prototype","js/executionContext"]
+          children: [
+            "js/script",
+            "js/scroll",
+            "js/select",
+            "js/EventLoop",
+            "js/debounceandthrottle",
+            "js/module",
+            "js/promise",
+            "js/sort",
+            "js/calc",
+            "js/prototype",
+            "js/executionContext"
+          ]
         },
         {
           title: "CSS",
           collapsable: false,
-          children: ["css/greyFilter","css/BFC"]
+          children: ["css/greyFilter", "css/BFC"]
         },
         {
           title: "HTTP",
           collapsable: false,
-          children: ["http/InterconnectionModel","http/http2",'http/SSL&TLS','http/cache','http/localCache','http/attack']
+          children: [
+            "http/InterconnectionModel",
+            "http/http2",
+            "http/SSL&TLS",
+            "http/cache",
+            "http/localCache",
+            "http/attack"
+          ]
         },
         {
           title: "HTTP深入学习",
           collapsable: false,
-          children: ["http/protocol","http/layer","http/DomainName","http/RequestResponse","http/methods","http/status","http/transfer"]
+          children: [
+            "http/protocol",
+            "http/layer",
+            "http/DomainName",
+            "http/RequestResponse",
+            "http/methods",
+            "http/status",
+            "http/transfer",
+            "http/connect"
+          ]
         },
         {
           title: "HTML",
@@ -44,28 +72,28 @@ module.exports = {
         {
           title: "webpack",
           collapsable: false,
-          children: ["webpack/loader&plugin","webpack/proxyTable",]
-        },
+          children: ["webpack/loader&plugin", "webpack/proxyTable"]
+        }
       ],
       "/base/": [
         {
-          title:"基础",
+          title: "基础",
           collapsable: false,
-          children:['',"bind","promise"]
+          children: ["", "bind", "promise"]
         },
         {
-          title:'正则',
+          title: "正则",
           collapsable: false,
-          children: ["RegExp/base",]
+          children: ["RegExp/base"]
         }
       ],
-      "/interview/":[
+      "/interview/": [
         {
           title: "面试",
           collapsable: false,
-          children: ["HTML","array","date"]
-        },
+          children: ["HTML", "array", "date"]
+        }
       ]
-    },
+    }
   }
 };
