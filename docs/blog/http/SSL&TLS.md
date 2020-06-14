@@ -1,6 +1,6 @@
 # SSL/TLS
 
-HTTPS是HTTP建立在SSL/TLS安全协议上的。通过SSL证书验证服务的身份，并为浏览器和服务器之间的通信进行加密。采用对称加密和非对称加密的组合而成的混合加密进行传输。属于OSI中的第五层（安全层）
+HTTPS是HTTP建立在SSL/TLS安全协议上的。通过SSL证书验证服务的身份，并为浏览器和服务器之间的通信进行加密。采用对称加密、非对称加密、身份认证等技术进行混合加密进行传输。属于OSI中的第五层（安全层），默认端口是443。
 
 SSL（Secure Sockets Layer）：安全套接字层，TLS（Transport Layer Security）：传输安全层，前身是SSL。
 
