@@ -59,6 +59,11 @@ Handshake Protocol: Server Hello
 5、服务器收到Premaster_secret后，私钥解密
 6、后面根据约定好的加密算法，使用client_random、serve_random、Premaster_secret生成对话秘钥，进行整个对话
 
+::: tip
+
+TLS握手成功之后，客户端必须要发送一个`连接前言`，用来确认HTTP2的链接。
+
+:::
 
 ## 优缺点
 
