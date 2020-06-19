@@ -95,3 +95,10 @@ Cross-site request forgery，跨站伪造请求。是一种冒充用户发送请
 - CSRF：用户需要先登录，取获取 Cookie。XSS：不需要登录
 
 - CSRF 利用网站 A 的漏洞去请求 A 网站的 API。XSS：注入代码到 A 网站，执行 JavaScript 代码，篡改内容
+
+
+## 其他
+
+### DDoS（distributed denial-of-service attack）/ 洪水攻击
+
+模仿用户/或者控制许多`僵尸`计算机，向目标服务器发起大量请求。服务器无法区分正常用户和黑客攻击，只能“照单全收”，这样就会挤占正常用户应有的资源。
