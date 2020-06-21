@@ -54,9 +54,41 @@ $ docker start 770204f3b42f
 # 对应镜像ID即可
 ```
 
-#### 后台运行
+重启容器
+
+```bash
+$ docker restart 770204f3b42f
+# 对应镜像ID即可
+```
+
+后台运行
 
 ```bash
 $ docker run -itd --name back-test ubuntu /bin/bash
 # -d 不进入容器，要进入需使用
+# 使用docker exec 进入
+```
+
+进入容器
+
+```bash
+$ docker exec -it 770204f3b42f /bin/bash
+# 对应镜像ID即可
+```
+
+## 导出和导入容器
+
+```bash
+# 导出容器
+$ docker export 770204f3b42f > test.tar
+
+# 导入容器
+$ car test.tar | docker import - test/test:v1
+```
+
+## 删除容器
+
+```bash
+$ docker rm -f 770204f3b42f
+
 ```
