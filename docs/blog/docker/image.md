@@ -20,3 +20,20 @@ arestest                  latest              9dc37dfffd30        3 days ago    
 # SIZE 镜像大小
 ```
 
+#### 运行容器
+
+```bash
+$ docker run -it ububtu:15.10 /bin/bash
+# ububtu:15.10 置顶镜像版本运行容器
+
+```
+
+#### 查找/删除容器
+
+```bash
+# 查找
+$ docker search httpd
+# 删除
+$ docker rmi httpd
+```
+
