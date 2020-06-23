@@ -6,9 +6,9 @@
 
 ```bash
 # 仓库关联
-$ docker tag ubuntu:tag snowtreetree/repository_ubuntu
+$ docker tag ubuntu:tag snowtreetree/repository_ubuntu:tag
 # ubuntu:tag 本地镜像及tag
-# snowtreetree/repository_ubuntu 仓库中的镜像
+# snowtreetree/repository_ubuntu:tag 仓库中的镜像
 
 $ docker push snowtreetree/repository_ubuntu
 ```
