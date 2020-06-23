@@ -77,7 +77,7 @@ module.exports = {
         {
           title: "Docker",
           collapsable: false,
-          children: ["docker/README"]
+          children: ["docker/README","docker/container","docker/image"]
         }
       ],
       "/base/": [
