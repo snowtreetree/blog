@@ -4,7 +4,8 @@
 
 ```bash
 FROM nginx
-# FROM 基础镜像，必须以FORM作为命令的开始
+# FROM 基础镜像，必须以FORM作为命令的开始，注释和pareser-directives 除外
+# https://docs.docker.com/engine/reference/builder/#parser-directives
 RUN echo '测试2' > /usr/share/nginx/html/index
 # RUN 执行后面跟着的命令或文件
 ```
