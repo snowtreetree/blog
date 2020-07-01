@@ -23,8 +23,10 @@ arestest                  latest              9dc37dfffd30        3 days ago    
 #### 运行容器
 
 ```bash
-$ docker run -it ububtu:15.10 /bin/bash
+$ docker run -it -p 7070:8080 ububtu:15.10 /bin/bash
 # ububtu:15.10 置顶镜像版本运行容器
+# p 设置端口 7070 代表主机端口，8080代表容器端口
+# P 随机端口
 
 ```
 
