@@ -39,3 +39,12 @@ $ docker search httpd
 $ docker rmi httpd
 ```
 
+
+#### 数据卷
+
+主机和容器数据共享
+
+```bash
+$ docker run -it -v /test:/test 7070:8080 centos
+```
+
