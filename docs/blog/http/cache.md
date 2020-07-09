@@ -26,7 +26,7 @@
 
 强制缓存失效后，服务器根据请求头中的Etag和Last-Modified，告诉客户端是否启动缓存。
 
-#### Last-Modified(响应)/f-Modified-Since（请求）
+#### Last-Modified(响应)/If-Modified-Since（请求）
 
 最后修改时间。  
 
@@ -36,7 +36,7 @@
 
 #### Etag（响应）/If-None-Match（请求）
 
-文件唯一标识。
+根据内容生成，文件唯一标识。当文件更改的内容不影响用户看到的信息，或是其他一些无关紧要的信息，比如增加了空格、注释等，Modified信息会发生变化。
 
 - 两者不一样，返回新的资源
 - 否则采用缓存
