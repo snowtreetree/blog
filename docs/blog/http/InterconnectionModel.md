@@ -31,10 +31,9 @@ SSL
 
 <!-- #### 安全层 -->
 
-
 #### 第四层 传输层
 
-TCP属于这一层。主要用于建立端口与端口之间的联系。 
+TCP属于这一层。主要用于建立端口与端口之间的联系。
 
 HTTP发送的报文，经过TCP切割成`段`的小数据块，然后封装到IP分组中。
 每个IP分组都包含了：
@@ -50,7 +49,7 @@ TCP是透过四个值来确保数据传输、到达的准确性：
 建立连接前，会进行三次握手。  
 :::tip
 
-ACK（Acknowledge character）确认字符。   
+ACK（Acknowledge character）确认字符。
 SYN 同步序列编号（Synchronize Sequence Numbers），是TCP/IP建立连接时使用的握手信号。
 FIN表示关闭连接。
 
