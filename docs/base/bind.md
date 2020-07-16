@@ -38,7 +38,7 @@ Function.prototype.myApply = function (context,arr) {
     context.fn = this
     // value 为返回值
     var value
-    if(!arr){
+    if(!arr || !arr.length){
         value = context.fn()
     } else {
          // 参数
@@ -59,6 +59,7 @@ Function.prototype.myApply = function (context,arr) {
 ## bind
 
 ``` js
+ // 创建新函数，调用新函数的时候，bind的第一个参数作为运行时的this。
 Function.prototype.myBind = function(context){
     // this指向当前函数
     var self = this
