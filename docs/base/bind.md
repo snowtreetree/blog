@@ -3,7 +3,7 @@
 ## call
 
 ``` js
-
+// 会出现number => string的情况
 Function.prototype.myCall = function (context) {
     // content 表示绑定的对象，为null的时候指向window
     var context = context || window
@@ -15,7 +15,10 @@ Function.prototype.myCall = function (context) {
     for(var i = 1;i<arguments.length; i++){
         args.push(`arguments[${i}]`)
     }
+    // 执行完之后，args = [arguments[1],arguments[2]...]
+
     // 执行
+    // `context.fn(${args})` 中的args会调用 toString方法
     var value = eval(`context.fn(${args})`)
     delete context.fn
     return value
