@@ -52,7 +52,7 @@ var throttle = function (fn,time=1000){
         let cur = +new Date
         if(!start || cur-start>time){
             start = +new Date
-            fn.apply(context,args)
+            return fn.apply(context,args)
         }
     }
 }
