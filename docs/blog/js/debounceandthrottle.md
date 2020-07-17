@@ -43,7 +43,7 @@ var debounce = function (fn,time=2000,immediate){
 :::
 
 ```js
-var throttle = function (fn,time=160){
+var throttle = function (fn,time=1000){
     let timeout
     let start
     return function(){
@@ -56,4 +56,6 @@ var throttle = function (fn,time=160){
         }
     }
 }
+var fn = () => {console.log('fn')}
+setInterval(throttle(fn),10)
 ```
