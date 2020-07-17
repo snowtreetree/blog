@@ -3,7 +3,7 @@
 ## 防抖
 
 ::: tip
-函数在指定time内只执行一次，time内多次触发，重新计算时间
+函数在指定time内只执行一次，time内多次触发，重新计算开始时间。
 :::
 
 ```js
@@ -37,21 +37,22 @@ var debounce = function (fn,time=2000,immediate){
 ```
 
 ## 节流
+
 ::: tip
-函数在指定time内只执行一次
+函数在指定time内只执行一次，同一时间内多次触发，只有一次生效。
 :::
 
 ```js
-var throttle = function (fn,time){
-    let timeout;
-    return function (){
-        let context = this;
-        let args = arguments;
-        if(!timeout){
-            timeout = setTimeout(() => {
-                timeout = null
-                fn.apply(context,args)
-            },time)
+var throttle = function (fn,time=160){
+    let timeout
+    let start
+    return function(){
+        const context = this
+        const args = arguments
+        let cur = +new Date
+        if(!start || cur-start>time){
+            start = +new Date
+            fn.apply(context,args)
         }
     }
 }
