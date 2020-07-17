@@ -2,7 +2,7 @@
 
 ## 简介
 
-异步解决方案。（回调地狱）。
+异步解决方案。===>（回调地狱）。
 
 - 状态不受外界影响
 - 状态变更不可逆
@@ -74,6 +74,47 @@ p1.then(res => {
 }).catch(err => {
     console.log('return reject',err)
 })
+```
+
+```js
+const p5 = new Promise((resolve,reject) => {
+    // 同步
+    console.log(1)
+    resolve()
+    console.log(2)
+})
+
+p5.then(res => {
+    console.log(3)
+})
+
+console.log(4)
+
+// 1
+// 2
+// 4
+// 3
+```
+
+```js
+// promise构造函数只执行一次，一旦执行，后续调用then，都会直接拿到对应的值。
+const p6 = new Promise(resolve => {
+    setTimeout(() => {
+        resolve('success')
+    },1000)
+})
+
+const start = +new Date
+
+p6.then(res => {
+    console.log(+new Date - start)
+})
+p6.then(res => {
+    console.log(+new Date - start)
+})
+// 1005
+// 1005 可能略有不同
+
 ```
 
 
@@ -200,3 +241,7 @@ MyPromise.prototype.finally = function finally(fn){
 var promise = new MyPromise((resolve,reject)=>{resolve(222)})
 
 ```
+
+## 参考
+
+[Promise 必知必会](https://juejin.im/post/5a04066351882517c416715d)
