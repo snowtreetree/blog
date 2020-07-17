@@ -1,4 +1,73 @@
-# Promise实现
+# Promise
+
+## 简介
+
+异步解决方案。（回调地狱）。
+
+- 状态不受外界影响
+- 状态变更不可逆
+
+三种状态，pending,fulfilled,rejected。
+
+```js
+const p1 = Promise.resolve('p1')
+const p2 = Promise.resolve('p2')
+const p3 = Promise.reject('p3')
+const p4 = Promise.reject('p4')
+```
+
+### finally
+
+无论状态的变更为何种状态，promise都会去执行。执行顺序参照finally函数所在位置。
+
+```js
+Promise.all([p1,p2]).finally((res) => {
+    console.log('all resolve finally',res)
+}).then(res => {
+    console.log('all resolve',res)
+    throw 'all resolve'
+}).catch((err) => {
+    console.log('all resolve catch',err)
+})
+```
+
+### all 
+
+当所有函数执行成功的时候，会执行传入的resolve函数。
+当其中一个失败，就会将失败的结果，传入到reject函数中。
+
+```js
+Promise.all([p1,p2,p3,p4]).then(res => {
+  console.log('all resolve',res)
+},(err) => {
+  console.log('all reject',err)
+  throw 'reject error'
+}).catch((err) => {
+  console.log('all catch',err)
+})
+```
+
+### race
+
+只要有一个函数执行成功，就会执行传入的resolve函数。
+
+全部失败的时候，执行传入的reject函数，函数的参数为第一个执行失败的结果。
+
+```js
+Promise.race([p3,p4]).then(res => {
+  console.log('race resolve',res)
+},(err) => {
+  console.log('race reject',err)
+  throw 1
+}).catch((err) => {
+  console.log('race catch',err)
+})
+```
+
+
+
+
+## 实现
 
 ``` js
 // 1、构造函数
