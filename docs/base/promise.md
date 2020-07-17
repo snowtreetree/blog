@@ -64,7 +64,17 @@ Promise.race([p3,p4]).then(res => {
 })
 ```
 
+### 其他
 
+在一个promise里面返回一个，reject的promise，catch也同样能够捕获。
+
+```js
+p1.then(res => {
+    return p3
+}).catch(err => {
+    console.log('return reject',err)
+})
+```
 
 
 ## 实现
