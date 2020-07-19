@@ -7,7 +7,7 @@
 - 状态不受外界影响
 - 状态变更不可逆
 
-三种状态，pending,fulfilled,rejected。
+三种状态，pending,fullfilled,rejected。
 
 ```js
 const p1 = Promise.resolve('p1')
@@ -31,7 +31,7 @@ Promise.all([p1,p2]).finally((res) => {
 })
 ```
 
-### all 
+### all
 
 当所有函数执行成功的时候，会执行传入的resolve函数。
 当其中一个失败，就会将失败的结果，传入到reject函数中。
@@ -117,7 +117,6 @@ p6.then(res => {
 
 ```
 
-
 ## 实现
 
 ``` js
@@ -159,6 +158,7 @@ function MyPromise(executor){
     // resolve,reject 为两个函数，只会执行一个
     // executor 可能会报错，报错时，直接执行reject
     try{
+        // resolve，reject 作为参数传递出去
         executor(resolve,reject)
     }catch(e){
         reject(e)
@@ -245,3 +245,4 @@ var promise = new MyPromise((resolve,reject)=>{resolve(222)})
 ## 参考
 
 [Promise 必知必会](https://juejin.im/post/5a04066351882517c416715d)
+[Promise 实现](https://github.com/xieranmaya/blog/issues/3)

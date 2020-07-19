@@ -70,7 +70,7 @@ Function.prototype.myBind = function(context){
     function myBind(){
         var myArgs  = Array.prototype.slice.call(arguments)
         // 使用apply的原因是myArgs 和args 会以数组的形式传递给this函数
-        // 你知道的js中有讲到 new 和bind的优先级，new虽然会改变新对象的this，但是原函数不会受到影响
+        // 你不知道的js中有讲到 new 和bind的优先级，new虽然会改变新对象的this，但是原函数不会受到影响
         // 构造函数的时候，this指向的是新创建的对象，执行self时，会在新对象上添加属性或方法
         return self.apply(this instanceof F ? this : context,args.concat(myArgs))
     }
