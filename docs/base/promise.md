@@ -7,7 +7,7 @@
 - 状态不受外界影响
 - 状态变更不可逆
 
-三种状态，pending,fullfilled,rejected。
+三种状态，pending,fulfilled,rejected。
 
 ```js
 const p1 = Promise.resolve('p1')
@@ -121,7 +121,7 @@ p6.then(res => {
 
 ``` js
 // 1、构造函数
-// 2、接收的一个executor为函数，executor函数有两个参数 resolve，rejecr
+// 2、接收的一个executor为函数，executor函数有两个参数 resolve，reject，这两个函数定义在promise内部，供用户调用
 // 3、状态status, pending, fulfilled, rejected 状态一旦改变，不能恢复
 
 
@@ -139,7 +139,8 @@ function MyPromise(executor){
         if(self.status === 'pending'){
             self.status = 'resolved';
             self.data = value
-            for(var i = 0; i < self.onResolvedCallback.length ; i++){
+            var resolveLength = self.onResolvedCallback.length
+            for(var i = 0; i < resolveLength ; i++){
                 self.onResolvedCallback[i](value)
             }
         }
@@ -149,7 +150,8 @@ function MyPromise(executor){
          if(self.status === 'pending'){
             self.status = 'rejected'
             self.data = reason;
-            for(var i = 0; i < self.onRejectedCallback.length ; i++){
+            var rejectLength = self.onRejectedCallback.length;
+            for(var i = 0; i < rejectLength ; i++){
                 self.onRejectedCallback[i](reason)
             }
         }
