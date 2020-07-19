@@ -240,6 +240,12 @@ MyPromise.prototype.resolve = function resolve(value){
     })
 }
 
+MyPromise.prototype.reject = function reject(reason){
+    return new MyPromise(function(resolve,reject){
+        reject(reason)
+    })
+}
+
 MyPromise.prototype.finally = function finally(fn){
     return this.then(function (value){
         fn()
