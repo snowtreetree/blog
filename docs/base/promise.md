@@ -119,11 +119,12 @@ p6.then(res => {
 
 ## 实现
 
+### 构造函数
+
 ``` js
 // 1、构造函数
 // 2、接收的一个executor为函数，executor函数有两个参数 resolve，reject，这两个函数定义在promise内部，供用户调用
 // 3、状态status, pending, fulfilled, rejected 状态一旦改变，不能恢复
-
 
 
 function MyPromise(executor){
@@ -166,12 +167,19 @@ function MyPromise(executor){
         reject(e)
     }
 }
+```
 
-// then 方法
+### then 方法
+
+- 定义在promise的原型链上
+- 返回一个新的promise
+- 两个函数参数，onResolved、onRejected
+
+```js
 MyPromise.prototype.then = function then(onResolved,onRejected){
     var self = this;
     var promise2;
-    // onResolved，onRejected默认函数的返回值，用于值的穿透
+    // onResolved，onRejected默认函数的返回值，用于值的穿透 => 内容直接向下传递。 function(v){ return v}
     onResolved = typeof onResolved === 'function'?onResolved:function(v){ return v};
     onRejected = typeof onRejected === 'function'?onRejected:function(r){ return r};
     if(self.status === 'resolved'){
