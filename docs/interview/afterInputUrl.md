@@ -21,12 +21,14 @@ TCP/IP 协议中，必须要知道对应的IP地址，才能够建立连接（[�
 
 ##### 4. DNS服务器
 
-根域名服务器查询。
+先向`LDNS`本地域名服务器查询，查询不到的话，继续向根域名服务器发起查询请求，根域名服务器返回主域名服务器地址（比如.com,.cn等），然后本地服务区再向主域名服务器发起请求。
 
 ::: tip
 
-DNS 劫持：
-dns-prefetch:
+DNS 劫持：域名劫持。
+
+[dns-prefetch](https://zhuanlan.zhihu.com/p/22362198):
+浏览器会对当前页面带有href的link的dns都prefetch一遍。
 
 :::
 
