@@ -98,7 +98,7 @@ module.exports = {
         {
           title: "面试",
           collapsable: false,
-          children: ["HTML", "array", "date"]
+          children: ["HTML", "array", "date","afterInputUrl"]
         }
       ]
     }
