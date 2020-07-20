@@ -8,7 +8,6 @@ var MyPromise  = function(executor) {
     self.onResolved = []
     self.onRejected = []
 
-
     function resolve(value){
         if(self.status === 'pending'){
             self.status='resolved';
@@ -89,6 +88,5 @@ MyPromise.prototype.finally = function(onFinally){
 MyPromise.prototype.resolve = function(v){
     return new MyPromise(function(resolve,reject){resolve(v)})
 }
-
 
 ```
