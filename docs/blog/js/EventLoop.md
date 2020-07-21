@@ -9,7 +9,9 @@
 事件循环。JavaScript是单线程的，意味着任务需要排队执行。如果前面耗时比较长的任务，会阻塞后面代码的执行，但对于IO（接口请求），后面的任务没必要等着响应回来之后才执行。对于那些一步一步执行，上一步执行完才执行下一步的，称为同步任务。不进入主线程，而进入任务队列（task quene）的任务，称为异步任务。EventLoop就是避免JavaScript在执行过程中出现阻塞的机制。  
 
 ::: tip
+
 JavaScript单线程原因，常见解释为，若有两个线程（A，B）同一时间在操作同一个DOM（D）元素，A线程在往D元素上添加内容（文本、属性或其他内容），但是B线程在删除D元素。
+
 :::
 
 ## 相关内容
@@ -40,12 +42,14 @@ requestAnimationFrame 在页面重绘前，当前微任务执行后
 
 微任务
 
-promise then/catch/finally、MutationObserver/process.nextTick(node)
+Promise then/catch/finally、MutationObserver/process.nextTick(node)
 
 浏览器会在一个宏任务结束后，检查是否有微任务开始执行，requestAnimationFrame，在此执行，然后进行重新渲染，这个过程是循环执行的，这个过程（或者机制）就被成为 EventLoop。
 
 下一次宏任务，必须要等到当前微任务执行完毕，才可以执行。
 因此上面的任务的执行结果就位 `script start，script end，promise1，promise2，setTimeout`
+
+`Promise的then属于微任务。`
 
 ```js
 console.log('script start')
