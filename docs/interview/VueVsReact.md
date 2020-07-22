@@ -6,6 +6,11 @@ JSX 更灵活，更方便去写HOC。
 
 Template 更符合前端的代码习惯
 
+## 数据更新
+
+React 需要自己监听变化和更新数据。
+Vue v-model支持双向绑定（语法糖）
+
 ## 复用
 
 mixin => HOC(Vue 使用模板嵌套) => render prop(Vue slot) => Hook
