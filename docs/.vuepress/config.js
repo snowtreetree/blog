@@ -98,7 +98,7 @@ module.exports = {
         {
           title: "面试",
           collapsable: false,
-          children: ["HTML", "array", "date","afterInputUrl","vue/vue3"]
+          children: ["HTML", "array", "date","afterInputUrl","VueVsReact","vue/vue3"]
         }
       ]
     }
