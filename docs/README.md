@@ -1,8 +1,8 @@
 ---
 home: true
 heroImage: /hero.png
-heroText: 个人blog
-tagline: 个人学习总结
+heroText: Opps~~
+tagline: 哦吼
 actionText: 开始阅读 →
 actionLink: /blog/
 features:
