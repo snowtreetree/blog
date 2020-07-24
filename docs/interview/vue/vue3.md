@@ -76,6 +76,10 @@ count.value++
 console.log(count.value) // 1
 ```
 
+### reactive VS ref
+
+使用reactive的组合函数，为了保证响应式，对应的对象不能够解构。使用toRefs解决此约束。
+
 ### computed
 
 计算属性，传入一个getter函数，返回一个默认不可手动修改的ref对象。

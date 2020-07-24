@@ -14,7 +14,8 @@ var Target = null
 function walk(data) {
     for(const key in data) {
         const dep = []
-        let val = data[key]
+        const property = Object.getOwnPropertyDescriptor(data, key)
+        let val = property.set?property.set():data[key]
         const nativeString = Object.prototype.toString.call(val)
         if(nativeString.toLowerCase() === '[object object]'){
             walk(data)

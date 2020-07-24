@@ -2,7 +2,7 @@
 
 在程序中直接或者间接调用自己
 
-## falt 数组拍平
+## flat 数组拍平
 
 ```js
 function flat(arr){
@@ -20,7 +20,7 @@ function flat(arr){
 
 // 元素均为字符串或数字
 function flat2(arr){
-   return arr. toString().split(',')
+   return arr.toString().split(',')
 }
 ```
 
