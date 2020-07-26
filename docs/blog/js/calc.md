@@ -10,7 +10,7 @@ function flat(arr){
     let flatArr = []
     for(let i = 0; i < len; i++){
         if(Array.isArray(arr[i])){
-            flatArr = flatArr.concat(flat(arr[i])) 
+            flatArr = flatArr.concat(flat(arr[i]))
         }else{
             flatArr.push(arr[i])
         }
