@@ -32,7 +32,15 @@ Single-Page-Application。HTML文件只需要加载一次，用户执行操作�
 - attrs/listeners 适用于隔代组件通信
 - scopedSlots 子组件传值到父组件 [作用域插槽](https://cn.vuejs.org/v2/guide/components-slots.html#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD)
 
-#### v-model 原理
+#### v-bind Vs v-model
+
+##### v-bind
+
+更多的是绑定数据和属性以及表达式。
+
+##### v-model
+
+主要使用在表单及自定义组件中。
 
 本质上是语法糖。绑定v-model的表单元素，会忽略元素的value、checked、selected初始值，而是以Vue实例的数据作为数据来源。
 v-model内部为不同的表单元素使用不同的property，并抛出不同的事件。
@@ -40,6 +48,10 @@ v-model内部为不同的表单元素使用不同的property，并抛出不同�
 - text和textarea使用value和input事件。
 - checkbox和radio使用checked的change事件。
 - select使用value和change事件。
+
+#### v-show Vs v-if
+
+v-show 是CSS状态的切换，v-if是完整的销毁和重新创建。频繁切换的使用v-show。
 
 #### Vuex
 
