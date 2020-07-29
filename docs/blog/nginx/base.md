@@ -14,9 +14,9 @@
 ```json
 // nginx.conf中
 // 事件处理模块
-events { 
+events {
     // worker_connections 工作进程的最大连接数
-    worker_connections 1024 
+    worker_connections 1024
 }
 //  http可以嵌套多个server服务，配置代理，缓存，请求/报错日志等
 http 
