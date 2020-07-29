@@ -25,10 +25,11 @@ Single-Page-Application。HTML文件只需要加载一次，用户执行操作�
 
 #### 通信方式
 
-- $emit
-- $ref、$parent
+- $emit、props
+- $ref、$parent/$children
 - provide、inject
-- vue bus：Vue 原型方法on/once/off/emit
+- Eventbus：Vue 原型方法on/once/off/emit
+- attrs/listeners 适用于隔代组件通信
 - scopedSlots 子组件传值到父组件 [作用域插槽](https://cn.vuejs.org/v2/guide/components-slots.html#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD)
 
 #### v-model 原理

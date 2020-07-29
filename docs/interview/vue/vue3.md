@@ -51,7 +51,7 @@ Suspense 悬念
 
 Composition API的入口，会在beforeCreate之前调用。
 
-#### params:
+#### params
 
 - props, 响应式，不可解构，会导致失去响应式。
 - context, 包含了attrs, slots, emit等
@@ -136,10 +136,21 @@ stop()
 - beforeMount => onBeforeMount
 - mounted => onMounted
 - beforeUpdate => onBeforeUpdate
-- uodated => onUpdated
+- updated => onUpdated
 - beforeDestory => onBeforeUnmount
 - destroyed => onUnMounted
 - errorCaptured => onErrorCaptured
+
+### 生命周期事件
+
+beforeCreate: vue实例的挂载元素el和数据对象的data都没初始化。
+created: vue 实例的数据对象已经有了，el还没有。
+beforeMount: 挂载元素el和数据对象data都有了，挂载之前还是虚拟dom节点。
+mounted: Vue实例已经挂载到真实DOM上，可通过dom操作获取DOM节点。
+beforeUpdate: 响应式数据更新时调用，发生在虚拟DOM打补丁之前，可以在此事件中移除DOM事件监听。
+updated: 虚拟DOM重新渲染和打补丁之后调用。
+beforeDestroy: 实例销毁之前调用，通过this还能访问到实例，可以清除定时器，解绑事件等。
+destroyed: 实例销毁后调用，调用后所有事件监听被移除。子实例也会被销毁。
 
 ## 依赖注入
 
