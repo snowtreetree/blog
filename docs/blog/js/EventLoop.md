@@ -89,6 +89,7 @@ JavaScript中没有严格意义上区分栈内存和堆内存。可以认为Java
 队列是一种先进先出的数据表结构。
 
 栈内存储基础类型，Number String Null Undefined Boolean。
+
 堆内一般存储引用数据类型，对象、数组等。
 
 ## 调用栈、执行上下文
@@ -109,6 +110,24 @@ JavaScript引擎会以栈的方式处理他们。
 - 全局上下文只有唯一一个，浏览器关闭时出栈
 - 函数的执行上下文没有个数限制
 - 每次单个函数的调用，就会创建新的执行上下文，调用自身函数也会创建
+
+#### 执行上下文生命周期
+
+- 创建阶段
+
+在这个阶段，执行上下文会分别创建变量对象、建立作用域链、确定this的指向。
+
+变量对象的创建又经历了以下几个过程：
+
+  1、建立arguments对象。检查当前上下文的参数，建立该对象下的属性和属性值。
+
+  2、检查当前上下文的函数声明。并在变量对象中建立对应属性，属性值为函数所在内存地址。如果属性名已经存在，则会用心属性值覆盖。
+
+  3、检查当前上下文的变量生命。每找到一个变量生命，就在变量对象中以变量名建立一个属性，如果属性已经存在，为了防止同名的函数被修改为undefined，则会直接跳过，原有属性值不会被修改。（所以说函数的优先级更高）
+
+- 代码执行阶段
+
+创建完成后，开始执行代码，完成变量赋值、函数引用、执行其他代码。
 
 
 [执行过程](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)
