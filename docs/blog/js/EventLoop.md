@@ -68,15 +68,47 @@ console.log('script end')
 
 执行结果`script start，promise，script end，resolve，settimeout`
 
-### 堆栈
+## 内存空间
 
-栈内存储基础类型，Number String Null Undefined Boolean
-堆内一般存储引用数据类型，对象、数组等
+JavaScript具有自动垃圾回收的机制。
 
-### 调用栈、执行上下文
+### 数据结构
+
+#### 堆
+
+堆数据是一种树状结构。顺序不影响使用，类似于书架取书。
+
+#### 栈
+
+JavaScript中没有严格意义上区分栈内存和堆内存。可以认为JavaScript中的所有数据都是保存在堆内存中，但是在执行上下文的场景中，执行顺序借用了栈数据结构的额存取方式。
+
+存取方式：先进后出
+
+#### 队列
+
+队列是一种先进先出的数据表结构。
+
+栈内存储基础类型，Number String Null Undefined Boolean。
+堆内一般存储引用数据类型，对象、数组等。
+
+## 调用栈、执行上下文
+
+### 调用栈
 
 调用栈是解释器追踪函数执行流的一种机制。
-[执行上下文]('./executionContext.md')是代码的执行环境，通常由三种（Global、function、eval）
+
+### 执行上下文
+
+[执行上下文]('./executionContext.md')是代码的执行环境，通常由三种（Global、function、eval）。
+
+JavaScript引擎会以栈的方式处理他们。
+代码执行过程中，每生成一个执行上下文，都会将这个上下文放到栈顶，待执行完毕，就会出栈。
+
+- 单线程
+- 同步执行，只有栈顶的上下文处于执行状态，其他的都需要等待
+- 全局上下文只有唯一一个，浏览器关闭时出栈
+- 函数的执行上下文没有个数限制
+- 每次单个函数的调用，就会创建新的执行上下文，调用自身函数也会创建
 
 
 [执行过程](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)
