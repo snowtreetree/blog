@@ -169,7 +169,7 @@ greeting();
 
 ::: tip
 
-对于AJAx、setTimeout这些，浏览器提供的webapi，在执行完成之后会放到callbackquene，等待系统读取
+对于AJAX、setTimeout这些，浏览器提供的webapi，在执行完成之后会放到callbackquene，等待系统读取
 :::
 
 ## 参考
