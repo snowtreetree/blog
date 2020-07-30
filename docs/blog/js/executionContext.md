@@ -72,6 +72,17 @@ JS 引擎会用当前函数的参数列表（arguments）初始化一个 “变�
 - 柯理化
 - 模块
 
+## this
+
+this的指向由调用者确定。
+
+this指向。
+
+- 默认。
+- 对象调用
+- bind/call/apply
+- new
+
 ## 参考
 
 [面试官：说说执行上下文吧](https://juejin.im/post/5ebced85e51d454dc1467664)

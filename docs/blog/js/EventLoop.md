@@ -36,7 +36,7 @@ console.log('script end');
 
 宏任务
 
-setTimeout、setInterval、requestAnimationFrame、setImmediate（node)
+script（整体任务）、setTimeout、setInterval、requestAnimationFrame、setImmediate（node)、UI renderding
 
 requestAnimationFrame 在页面重绘前，当前微任务执行后
 
@@ -103,7 +103,10 @@ JavaScript中没有严格意义上区分栈内存和堆内存。可以认为Java
 [执行上下文]('./executionContext.md')是代码的执行环境，通常由三种（Global、function、eval）。
 
 JavaScript引擎会以栈的方式处理他们。
+
 代码执行过程中，每生成一个执行上下文，都会将这个上下文放到栈顶，待执行完毕，就会出栈。
+
+`除了依赖调用栈来处理函数，还会通过任务队列（task quene）来搞定另外的代码执行。`
 
 - 单线程
 - 同步执行，只有栈顶的上下文处于执行状态，其他的都需要等待
