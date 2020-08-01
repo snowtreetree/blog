@@ -2,11 +2,13 @@
 
 ## 基础
 
-### 单页面应用
+### 单页面应用（SPA）& 多页面应用（MPA）
 
 #### 是什么🤔
 
-Single-Page-Application。HTML文件只需要加载一次，用户执行操作或在应用的各区域间导航时，无需重新加载页面。
+Single-Page-Application。只有一个主页面的应用，HTML文件只需要加载一次，用户执行操作或在应用的各区域间导航时，无需重新加载页面。
+
+Multiple page application。应用中有多个页面，页面跳转会刷新页面。
 
 ##### 优点
 
@@ -16,7 +18,7 @@ Single-Page-Application。HTML文件只需要加载一次，用户执行操作�
 
 ##### 缺点
 
-- 不利于SEO
+- 不利于SEO(Search Engine Optimization)
 - 首屏加载时间较长。 webpack vendor，gzip压缩，路由、图片懒加载，使用雪碧图，增加首屏loading。
 
 ### 单向数据流
@@ -101,4 +103,6 @@ Vue.js 应用程序开发的状态管理模式。使用单一的状态树，一�
 
 [Vue 核心之数据双向绑定](https://juejin.im/post/5d421bcf6fb9a06af23853f1)
 
-[![zxl](https://github-readme-stats.vercel.app/api?username=snowtreetree)](https://github.com/snowtreetree)
+<!-- [![zxl](https://github-readme-stats.vercel.app/api?username=snowtreetree)](https://github.com/snowtreetree) -->
+
+[关于SPA的SEO解决方案](https://medium.com/@keshidong.dev/%E5%85%B3%E4%BA%8Espa%E7%9A%84seo%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88-2639a63361ad)
