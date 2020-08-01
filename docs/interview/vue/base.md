@@ -111,3 +111,7 @@ Vue.js 应用程序开发的状态管理模式。使用单一的状态树，一�
 <!-- [![zxl](https://github-readme-stats.vercel.app/api?username=snowtreetree)](https://github.com/snowtreetree) -->
 
 [关于SPA的SEO解决方案](https://medium.com/@keshidong.dev/%E5%85%B3%E4%BA%8Espa%E7%9A%84seo%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88-2639a63361ad)
+
+[vue常见面试题](https://zhuanlan.zhihu.com/p/92407628)
+
+[Single-page application vs. multiple-page application](https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58)
