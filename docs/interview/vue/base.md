@@ -2,6 +2,11 @@
 
 ## 基础
 
+### 核心点
+
+- 数据驱动：ViewModel，保证数据和视图的一致性。
+- 组件系统：应用类UI可以看做全部是组件树构建。
+
 ### 单页面应用（SPA）& 多页面应用（MPA）
 
 #### 是什么🤔
@@ -19,7 +24,7 @@ Multiple page application。应用中有多个页面，页面跳转会刷新页�
 ##### 缺点
 
 - 不利于SEO(Search Engine Optimization)
-- 首屏加载时间较长。 webpack vendor，gzip压缩，路由、图片懒加载，使用雪碧图，增加首屏loading。
+- 首屏加载时间较长。 动态懒加载，webpack vendor，gzip压缩，路由、图片懒加载，使用雪碧图，增加首屏loading。
 
 ### 单向数据流
 
