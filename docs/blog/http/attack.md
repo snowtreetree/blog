@@ -58,7 +58,6 @@ DOM 型 XSS 跟前两种 XSS 的区别：DOM 型 XSS 攻击中，取出和执行
   - 禁止未授权脚本执行
 - Http-only Cookie ，禁止通过 JavaScript 代码获取 Cookie 信息
 
-
 ## CSRF
 
 Cross-site request forgery，跨站伪造请求。是一种冒充用户发送请求的。
@@ -80,9 +79,10 @@ Cross-site request forgery，跨站伪造请求。是一种冒充用户发送请
   <script> document.forms[0].submit(); </script>
     ```
 
- - 其他网站，增加可点击连接，跳转到目标网站
+- 其他网站，增加可点击连接，跳转到目标网站
 
 ### 预防
+
 - 验证码
 - 同源检测，Origin Header，Refer Header
 - Token，服务器随机生成，每次提交时带上token信息
