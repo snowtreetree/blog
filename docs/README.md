@@ -1,9 +1,9 @@
 ---
 home: true
-heroImage: /hero.png
+heroImage: https://media.giphy.com/media/SS8CV2rQdlYNLtBCiF/giphy.gif
 heroText: Opps~~
-tagline: 哦吼
-actionText: 开始阅读 →
+tagline: 种草ing
+actionText: Let's go →
 actionLink: /blog/
 features:
 - title: 日常问题
