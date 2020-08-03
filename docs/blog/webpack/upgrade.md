@@ -28,7 +28,7 @@
 - html-webpack-plugin
 - extract-text-webpack-plugin => mini-css-extract-plugin
 
-### optimization 
+### optimization
 
 #### 公共代码提取
 
