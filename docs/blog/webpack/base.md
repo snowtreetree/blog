@@ -24,11 +24,11 @@
 
 #### 常见loader
 
-- 样式：style-loader、css-loader、less-loader
+- 样式：style-loader、css-loader、less-loader、postcss-loader（样式自动补全）
 - 文件：raw-loader、file-loader、url-loader  
     raw-loader 将文件以字符串形式返回  
     file-loader 将文件复制到指定目录，并生成文件资源的URL  
-    url-loader 可以将小于配置limit大小的文件转换成Data Url的方式，减少请求
+    url-loader 类似于file-loader，可以将小于配置limit大小的文件转换成Data Url的方式，减少请求
 - 编译：babel-loader、ts-loader、vue-loader  
     将其他语言装换成js语言或编译下一代语言。
 
@@ -43,7 +43,7 @@
 
 ### plugins
 
-通过钩子可以参与到整个构建的过程，构建过程中执行某些特定的任务。
+通过钩子可以参与到整个构建周期，构建过程中执行某些特定的任务，改变输出结果。
 
 #### 常见plugins
 
@@ -53,6 +53,7 @@
 - HotModuleReplacementPlugin 热更新
 - webpack-bundle-analyzer bundle文件分析工具
 - happypack 通过多进程模型，加速代码构建
+- clean-webpack-plugin 目录清理
 
 ### externals
 
@@ -61,3 +62,39 @@
 常见的是使用CDN。
 
 [使用文档](https://webpack.docschina.org/configuration/externals/)
+
+## 优化打包速度
+
+### 高版本的Webpack
+
+### 多进程/多实例打包
+
+- happypack
+- thread-loader
+
+### 压缩代码
+
+- webpack-paralle-uglify-plugin
+- terser-webpack-plugin
+
+### 图片压缩
+
+- image-webpack-loader
+
+### 公共资源
+
+splitchunks
+
+### 缓存
+
+cache-loader或hard-source-webpack-loader
+
+### tree-shaking
+
+依赖于es6语法。检测到未使用文件中未使用的部分，打包时进行删除。
+
+### scope-hoisting
+
+## 参考
+
+[「吐血整理」再来一打Webpack面试题](https://juejin.im/post/6844904094281236487)
