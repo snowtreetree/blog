@@ -74,7 +74,7 @@ module.exports = {
         {
           title: "webpack",
           collapsable: false,
-          children: ["webpack/base","webpack/loader&plugin", "webpack/proxyTable"]
+          children: ["webpack/base","webpack/loader&plugin", "webpack/config","webpack/upgrade"]
         },
         {
           title: "Docker",
