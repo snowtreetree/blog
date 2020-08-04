@@ -1,11 +1,10 @@
 # SSL/TLS
 
-HTTPS是HTTP建立在SSL/TLS安全协议上的。通过SSL证书验证服务的身份，并为浏览器和服务器之间的通信进行加密。采用对称加密、非对称加密、身份认证等技术进行混合加密进行传输。属于OSI中的第五层（安全层），默认端口是443。与普通的发送HTTP请求相比，多了一个握手的过程，HTTPS需要在TCP上建立安全链接之后，才能收发HTTP报文。
+HTTPS是HTTP建立在SSL/TLS安全协议上的。通过SSL证书验证服务的身份，并为浏览器和服务器之间的通信进行加密。采用对称加密、非对称加密、身份认证等技术进行混合加密传输。属于OSI中的第五层（安全层），默认端口是443。与普通的发送HTTP请求相比，多了一个握手的过程，HTTPS需要在TCP上建立安全链接之后，才能收发HTTP报文。
 
 ::: tip
 
 SSL（Secure Sockets Layer）：安全套接字层，TLS（Transport Layer Security）：传输安全层，前身是SSL。
-
 
 通信安全需要同时具备机密性（不被窃听）、不可否认、完整性、身份认证（证明自己）
 :::
@@ -30,10 +29,9 @@ TLS包含了几个子协议，每个子协议各自负责不同的模块。
 
 告诉对方，后续数据都用加密保护。
 
-
 ## 握手流程
 
-1、客户端通过URL访问服务器建立SSL/TLS连接，将协议版本号，生成一个随机数（client_random），以及支持的加密方法发送到服务器  
+1、客户端通过URL访问服务器建立SSL/TLS连接，将协议版本号，生成一个随机数（client_random），以及支持的加密方法发送到服务器。
 
 ```js
 Handshake Protocol: Client Hello
@@ -44,7 +42,7 @@ Handshake Protocol: Client Hello
         Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (0xc030)
 ```
 
-2、服务端收到请求，确认加密算法，并生成一个serve_random，以及网站支持的证书（包含公钥等信息）发送到客户端  
+2、服务端收到请求，确认加密算法，并生成一个serve_random，以及网站支持的证书（包含公钥等信息）发送到客户端。
 
 ```js
 Handshake Protocol: Server Hello
@@ -54,10 +52,13 @@ Handshake Protocol: Server Hello
 
 ```
 
-3、客户端收到证书后进行，得到服务端的信息及公钥，协商安全等级（信息加密的等级）。  
-4、验证成功后，生成一个新的随机数Premaster_secret，经过公钥加密后，发给服务器
-5、服务器收到Premaster_secret后，私钥解密
-6、后面根据约定好的加密算法，使用client_random、serve_random、Premaster_secret生成对话秘钥，进行整个对话
+3、客户端收到证书后进行，得到服务端的信息及公钥，协商安全等级（信息加密的等级）。
+
+4、验证成功后，生成一个新的随机数Premaster_secret，经过公钥加密后，发给服务器。
+
+5、服务器收到Premaster_secret后，私钥解密。
+
+6、后面根据约定好的加密算法，使用client_random、serve_random、Premaster_secret生成对话秘钥，进行整个对话。
 
 ::: tip
 
