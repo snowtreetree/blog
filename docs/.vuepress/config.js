@@ -3,7 +3,8 @@ module.exports = {
   description: "个人博客-技术总结，问题归纳",
   head:[
 		['link',{rel:'icon',href:'favicon.ico'}]
-	],
+  ],
+  // https://favicon.io/emoji-favicons/potted-plant/
   themeConfig: {
     repo: "snowtreetree/blog",
     // 顶部导航
