@@ -1,6 +1,9 @@
 module.exports = {
   title: "青沛🌲",
   description: "个人博客-技术总结，问题归纳",
+  head:[
+		['link',{rel:'icon',href:'favicon.ico'}]
+	],
   themeConfig: {
     repo: "snowtreetree/blog",
     // 顶部导航
