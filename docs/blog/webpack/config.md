@@ -28,7 +28,7 @@ Webpack使用响应模式的内置优化。development，production，none。
 
 webpack-dev-server 基于 webpack-dev-moddleware。
 
- webpack-dev-moddleware常配合Express使用。
+webpack-dev-moddleware常配合Express使用。
 
 [使用文档](https://webpack.docschina.org/configuration/devtool/)
 
@@ -62,5 +62,3 @@ import(/* webpackPrefetch: true */ 'LoginModal');
 chunks + entry（多入口），可用来配置多页面打包。比如区分微信，支付宝环境等。
 
 [使用文档](https://github.com/jantimon/html-webpack-plugin#options)
-
-
