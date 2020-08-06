@@ -6,6 +6,8 @@
 
 ## AMD
 
+异步模块定义，是为浏览器环境设计。
+
 使用reqiureJs 编写模块，支持异步和浏览器环境。
 
 ```js
@@ -26,7 +28,11 @@ define(function(require,exports,module){
 
 ## CommonJS
 
-nodejs中的模块化，不支持异步加载。
+nodejs中的模块化规范，同步加载。
+
+引入模块资源，都是在服务器上，所以不存在阻塞或者时间长的问题。
+
+但是如果浏览器里面也使用同步加载，会导致等待时间较长。
 
 ```js
 var path = require('path')
@@ -34,7 +40,7 @@ var path = require('path')
 
 ## UMD
 
-兼容AMD和CommonJs的模块化语法，
+`Universal Module Definition` 通用模块定义规范，兼容AMD和CommonJs的模块化语法，
 
 ```js
 (function (root, factory) {
@@ -54,6 +60,10 @@ var path = require('path')
 
 ```
 
-## ES Modules
+## ES Module
 
 ES6 引入的模块化，支持import 来引入另一个 js，需要babel和Webpack支持才能使用。
+
+## Reference
+
+[Webpack 打包太慢？来试试 Bundleless 吧](https://developer.aliyun.com/article/768060)
