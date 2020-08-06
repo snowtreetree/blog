@@ -29,8 +29,12 @@
 
 - 减少重绘和回流，或者使用重绘代替回流
 - 批量修改（先脱离文档流，然后操作，再恢复）
-- css3硬件加速（ransform、opacity、filters这些动画不会引起回流重绘）
+- css3硬件加速（transform、opacity、filters这些动画不会引起回流重绘）
 - 避免使用table
 - 避免使用CSS表达式
 - 频繁操作样式，可以将样式一次性赋值
 - DOM缓存
+
+## 应用
+
+- 拖拽实现，通常可以使用postition: absolute实现，可以使用transform: translate进行优化。
