@@ -30,9 +30,13 @@
 - prefetch。告诉浏览器加载下一页面可能会用到的资源，加速下一个页面的加载速度。
 
 - dns-prefetch。[dns预解析](https://zhuanlan.zhihu.com/p/22362198)，提高网站访问速度。
-:::tip  
+
+:::tip
+
 HTTPS域名下的a标签不会预解析，需设置
+
 ```html
 <meta http-equiv="x-dns-prefetch-control" content="on">
 ```
+
 :::
