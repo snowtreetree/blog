@@ -40,7 +40,7 @@ var path = require('path')
 
 ## UMD
 
-`Universal Module Definition` 通用模块定义规范，兼容AMD和CommonJs的模块化语法，
+`Universal Module Definition` 通用模块定义规范，兼容AMD和CommonJs的模块化语法，回去判断exports、define方法是否存在，从而决定具体使用哪一种规范。
 
 ```js
 (function (root, factory) {
@@ -67,3 +67,5 @@ ES6 引入的模块化，支持import 来引入另一个 js，需要babel和Webp
 ## Reference
 
 [Webpack 打包太慢？来试试 Bundleless 吧](https://developer.aliyun.com/article/768060)
+
+[JavaScript 模块化的历史进程](https://mp.weixin.qq.com/s/W4pbh5ivGu-RGkz1fdDqwQ)
