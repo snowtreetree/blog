@@ -43,5 +43,6 @@ HTML中用于嵌入或引用可执行脚本。默认并行请求，串行执行�
 ## crossorigin
 
 获取跨域脚本的报错信息。通常需要和Access-Control-Allow-Origin配套使用。
+
 - anonymous 会在请求头里面带上Origin参数，但是不会带其他认证信息
 - use-credentials 跨域时会带上认证信息（cookie等）
