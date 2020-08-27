@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .one > div {
+        float: left;
+    }
+    .main {
+        background-color: aqua;
+    }
+    .left {
+        width: 100px;
+        background-color: chartreuse;
+    }
+    .right {
+        width: 100px;
+        background-color: black;
+    }
+    .one-main {
+        width: 100%;
+        padding: 0 100px;
+        box-sizing: border-box;
+    }
+    .one-left {
+        margin-left: -100%;
+    }
+    .one-right {
+        margin-left: -100px;
+    }
+</style>
+<body>
+    <div class="one">
+        <div class="main one-main">main</div>
+        <div class="left one-left">left</div>
+        <div class="right one-right">right</div>
+    </div>
+</body>
+</html>
