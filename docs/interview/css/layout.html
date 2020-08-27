@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <style>
+    .one {
+        padding: 0 100px;
+    }
     .one > div {
         float: left;
     }
@@ -13,30 +16,66 @@
         background-color: aqua;
     }
     .left {
-        width: 100px;
+        width: 900px;
         background-color: chartreuse;
     }
     .right {
         width: 100px;
-        background-color: black;
+        background-color:blueviolet;
     }
     .one-main {
         width: 100%;
-        padding: 0 100px;
-        box-sizing: border-box;
     }
     .one-left {
         margin-left: -100%;
+        position: relative;
+        left: -100px;
     }
     .one-right {
         margin-left: -100px;
+        position: relative;
+        right: -100px;
+    }
+    /* 双飞翼 */
+    .one {
+        overflow: hidden;
+    }
+    .two > div{
+        float: left;
+    }
+    .two-main {
+        width: 100%;
+    }
+
+    .two-left {
+        margin-left: -100%;
+    }
+
+    .two-right {
+        margin-left: -100px;
+    }
+
+    .main-content {
+        margin: 0 100px;
     }
 </style>
 <body>
+    圣杯布局
     <div class="one">
         <div class="main one-main">main</div>
         <div class="left one-left">left</div>
         <div class="right one-right">right</div>
+    </div>
+<br/>
+    双飞翼
+    <div class="two">
+        <div class="main two-main">
+            <div class="main-inner">
+                main
+            </div>
+        </div>
+        <div class="left two-left">left</div>
+        <div class="right two-right">right</div>
     </div>
 </body>
 </html>
