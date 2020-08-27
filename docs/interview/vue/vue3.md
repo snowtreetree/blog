@@ -121,7 +121,7 @@ stop()
 
 ### watch
 
-#### 相对于watchEffect：
+#### 相对于watchEffect
 
 - 懒执行
 - 可自定义监听源
