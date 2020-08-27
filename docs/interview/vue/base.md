@@ -81,7 +81,7 @@ Vue.js 应用程序开发的状态管理模式。使用单一的状态树，一�
 
 - hash，使用URL hash值来做路由。监听`hashchange`事件。路由中带有#。
 - history，依赖H5 History API和服务器配置。history pushState，replaceState方法。
-- abstract，支持所有JavaScript运行环境。
+- abstract，支持所有JavaScript运行环境，常用于SSR。
 
 ## Proxy Vs Obejct.defineProperty
 
