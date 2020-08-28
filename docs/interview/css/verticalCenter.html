@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        height: 50px;
+        border: 1px solid aqua;
+        margin-bottom: 10px;
+    }
+    .one {
+        width: 100px;
+        height: 50px;
+        line-height: 50px;
+        border: 1px solid aqua;
+    }
+    .two::before {
+        content: "";
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .green-box {
+        background-color: green;
+        width: 10px;
+        display: inline-block;
+        height: 10px;
+    }
+    .three-inner {
+        height: 20px;
+        background-color: green;
+        width: 20px;
+        position: relative;
+        top: calc(50% - 10px);
+    }
+    .four-inner {
+        height: 20px;
+        background-color: green;
+        width: 20px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .top {
+        height: 0;
+        width: 0;
+        border: 50px solid transparent;
+        border-top: 50px solid red;
+    }
+</style>
+<body>
+    <div class="box one">
+        line-height
+    </div>
+    <div class="box two">
+        伪类选择
+        <div class="green-box"></div>
+    </div>
+
+    <div class="box three">
+        <div class="three-inner"></div>
+    </div>
+
+    <div class="box four">
+        <div class="four-inner"></div>
+    </div>
+    <div class="top"></div>
+</body>
+</html>
