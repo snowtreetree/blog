@@ -101,6 +101,26 @@ Vue3: Proxy
 
 - 不支持IE9
 
+## nextTick/异步更新
+
+更新单个或多个数据的时候，渲染不会立即触发，会先去收集需要更新的watcher，放到数组中，然后通过微任务/宏任务去调用数组中的watcher。
+
+使用到的微任务/宏任务，Promise，MutationObserver，setImmediate，setTimeout实现。
+
+## 优化
+
+- 避免data中放过多的数据，可以使用computer，filter等。
+- keep-alive
+- v-for 事件代理
+- v-if 、v-show
+- 合理懒加载
+- 数据不会变更的话，object.freeze
+- runtime 版本
+
+- 图片懒加载
+- 骨架屏
+- 可视区域加载 vue-virtual-scroll-list
+
 ## 参考
 
 [在传统 Web 应用和单页应用 (SPA) 之间选择](https://docs.microsoft.com/zh-cn/dotnet/architecture/modern-web-apps-azure/choose-between-traditional-web-and-single-page-apps)

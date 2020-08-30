@@ -3,7 +3,9 @@
 ## 防抖
 
 ::: tip
+
 函数在指定time内只执行一次，time内多次触发，重新计算开始时间。
+
 :::
 
 ```js
@@ -39,7 +41,9 @@ var debounce = function (fn,time=2000,immediate){
 ## 节流
 
 ::: tip
+
 函数在指定time内只执行一次，同一时间内多次触发，只有一次生效。
+
 :::
 
 ```js
