@@ -143,10 +143,10 @@ stop()
 
 ### 生命周期事件
 
-beforeCreate: vue实例的挂载元素el和数据对象的data都没初始化。
-created: vue 实例的数据对象已经有了，el还没有。
-beforeMount: 挂载元素el和数据对象data都有了，挂载之前还是虚拟dom节点。
-mounted: Vue实例已经挂载到真实DOM上，可通过dom操作获取DOM节点。
+beforeCreate: 创建了一个Vue实例，初始化生命周期函数/默认事件，找到子组件的父父组件，添加到父组件的child中，初始化放到子组件上的click等事件。实例的挂载元素el和数据对象的data都没初始化。
+created: vue 实例的数据对象已经有了，el还没有。 初始化data/methods/props/inject/provide。
+beforeMount: 模板编译阶段，挂载元素el和数据对象data都有了，挂载之前还是虚拟dom节点。
+mounted: Vue实例已经挂载到真实DOM上，可通过dom操作获取DOM节点，替换el。
 beforeUpdate: 响应式数据更新时调用，发生在虚拟DOM打补丁之前，可以在此事件中移除DOM事件监听。
 updated: 虚拟DOM重新渲染和打补丁之后调用。
 beforeDestroy: 实例销毁之前调用，通过this还能访问到实例，可以清除定时器，解绑事件等。
