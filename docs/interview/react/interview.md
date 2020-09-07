@@ -46,7 +46,7 @@ JavaScript的语法扩展。本身还是一个表达式。React.createElement的
 
 ### useEffect
 
-执行副作用操作，相当于`componenetDicMount`，`componentDidUpdate`，`componentWillUnmount`。
+执行副作用操作，相当于`componenetDidMount`，`componentDidUpdate`，`componentWillUnmount`。
 
 ### useContext
 
@@ -153,7 +153,7 @@ PureComponent
 
 prop更新的时候，初始化render的时候不会调用。
 
-#### shouldComponenetUpdate
+#### shouldComponentUpdate
 
 prop或state更新时调用。
 
