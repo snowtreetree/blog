@@ -16,6 +16,11 @@ const p3 = Promise.reject('p3')
 const p4 = Promise.reject('p4')
 ```
 
+### 缺点
+
+- 不可取消
+- 不知道当前是什么状态，刚开始或者快结束
+
 ### finally
 
 无论状态的变更为何种状态，promise都会去执行。执行顺序参照finally函数所在位置。
