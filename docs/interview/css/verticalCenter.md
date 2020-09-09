@@ -4,7 +4,16 @@
 
 ### line-height
 
+行高，基线与基线的间距。
 适用于单行的行内元素，将元素的height和line-height设置成相同的值，多行内容会导致显示错位。
+
+[css中的line-height](https://segmentfault.com/a/1190000003038583)
+[CSS行高（line-height）及文本垂直居中原理](https://segmentfault.com/a/1190000005122321)
+
+常见参数
+line-height: normal 默认值
+line-height: 3 相对于元素的font-size
+line-height: 2em/20px
 
 ### 伪类选择器+vertical-align
 
