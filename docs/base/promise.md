@@ -187,8 +187,8 @@ function MyPromise(executor) {
 
 ### then 方法
 
-- 定义在 promise 的原型链上
-- 返回一个新的 promise
+- 定义在 Promise 的原型链上
+- 返回一个新的 Promise
 - 两个函数参数，onResolved、onRejected
 
 ```js
