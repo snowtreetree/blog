@@ -59,3 +59,5 @@ MAC 层的传输单位是帧（frame），IP 层的传输单位是包（packet�
 ### 七层负载均衡
 
 是指工作在应用层上，看到的是 HTTP 协议，解析 HTTP 报文里的 URI，主机名，资源类型等数据，再用适当的策略转发给后端服务器。
+
+[浏览器工作原理与实践](https://blog.poetries.top/browser-working-principle/)
