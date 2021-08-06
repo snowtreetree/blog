@@ -22,7 +22,7 @@
 - no-cache： `跳过当前强缓存，进入协商缓存`
 - no-store： 不缓存
 - s-maxage： 针对代理服务器的缓存时间
-- must-revalidate 缓存不过期可以继续使用，过期了则去服务器验证
+- must-revalidate： 缓存不过期可以继续使用，过期了则去服务器验证
 - private：私有缓存，单独用户，对应浏览器，拒绝中间人缓存，比如 CDN 和代理
 - public: 共享缓存，多个用户缓存
 
