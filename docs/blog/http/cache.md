@@ -25,6 +25,8 @@
 - must-revalidate： 缓存不过期可以继续使用，过期了则去服务器验证
 - private：私有缓存，单独用户，对应浏览器，拒绝中间人缓存，比如 CDN 和代理
 - public: 共享缓存，多个用户缓存
+- max-stale：X(seconds) 客户端愿意接收一个已过期 X 秒的资源
+- min-fresh：X(seconds) 客户端接收一个在 X 秒后不会过期的资源
 
 ### 协商缓存
 
